@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func encrypt(key []byte, data []byte) (enc []byte, err error) {
+func Encrypt(key []byte, data []byte) (enc []byte, err error) {
 	counter := 0
 	mod := 0
 	keylen := len(key) - 1
@@ -25,7 +25,7 @@ func encrypt(key []byte, data []byte) (enc []byte, err error) {
 
 }
 
-func decrypt(key []byte, data []byte) (enc []byte, err error) {
+func Decrypt(key []byte, data []byte) (enc []byte, err error) {
 	counter := 0
 	mod := 0
 	keylen := len(key) - 1
