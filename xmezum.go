@@ -50,7 +50,7 @@ func main() {
 	}
 	original := []byte("Hello, World!!! How are you today?")
 	// Casting to string and back to bytes is required to prevent modification of original slice
-	enc, _ := encrypt(key, []byte(string(original)))
+	enc, _ := Encrypt(key, []byte(string(original)))
 	fmt.Print("Key: ")
 	fmt.Println(key)
 	fmt.Print("OG: ")
@@ -71,12 +71,12 @@ func main() {
 	fmt.Print("SPEED of filling 1024MB: ")
 	fmt.Println(duration.Milliseconds())
 	start = time.Now()
-	encrypt(key, randdata)
+	Encrypt(key, randdata)
 	duration = time.Since(start)
 	fmt.Print("SPEED of 1024MB: ")
 	fmt.Println(duration.Milliseconds())
 
 	fmt.Print("\nDEC: ")
-	dec, _ := decrypt(key, enc)
+	dec, _ := Decrypt(key, enc)
 	fmt.Println(string(dec))
 }
